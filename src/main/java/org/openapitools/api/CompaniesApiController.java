@@ -4,7 +4,6 @@ import javax.annotation.Generated;
 
 import org.openapitools.model.Company;
 import org.openapitools.model.Error;
-import org.openapitools.model.RemoteDataException;
 import org.openapitools.repository.CompaniesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,7 +45,7 @@ public class CompaniesApiController {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = Error.class)) }) })
 	@RequestMapping(method = RequestMethod.GET, value = "/companies/{id}", produces = { "application/json" })
 	public ResponseEntity<Company> companiesIdGet(
-			@Parameter(name = "id", description = "Company ID", required = true, in = ParameterIn.PATH) @PathVariable("id") Integer id) throws RemoteDataException {
+			@Parameter(name = "id", description = "Company ID", required = true, in = ParameterIn.PATH) @PathVariable("id") Integer id) {
 
 		Company company = companiesRepository.findById(id);
 		return new ResponseEntity<>(company, HttpStatus.OK);

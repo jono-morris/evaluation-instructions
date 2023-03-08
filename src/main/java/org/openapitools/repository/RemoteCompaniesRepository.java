@@ -6,8 +6,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import org.openapitools.api.ResourceNotFoundException;
 import org.openapitools.model.Company;
-import org.openapitools.model.ResourceNotFoundException;
 import org.springframework.stereotype.Repository;
 
 /**
