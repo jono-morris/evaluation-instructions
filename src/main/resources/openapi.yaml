@@ -1,0 +1,70 @@
+openapi: 3.0.2
+info:
+  description: Your API should produce a JSON response that aligns with this specification
+  title: MWNZ companies
+  version: "1.0"
+servers:
+- url: https://your-application.com/v1
+paths:
+  /companies/{id}:
+    get:
+      parameters:
+      - description: Company ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: number
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                MWNZ:
+                  value:
+                    id: 1
+                    name: MWNZ
+                    description: ..is awesome
+                Other:
+                  value:
+                    id: 2
+                    name: Other
+                    description: '....is not'
+              schema:
+                $ref: '#/components/schemas/Company'
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+      tags:
+      - Companies
+      x-accepts: application/json
+      x-tags:
+      - tag: Companies
+components:
+  schemas:
+    Company:
+      example:
+        name: name
+        description: description
+        id: 0
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+      type: object
+    Error:
+      properties:
+        error:
+          type: string
+        error_description:
+          type: string
+      type: object
