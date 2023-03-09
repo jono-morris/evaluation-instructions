@@ -8,9 +8,35 @@ The diagram below illustrates what it is that you will need to build. In simple 
 
 ![Component Overview](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/MiddlewareNewZealand/evaluation-instructions/main/images/components.puml)
 
+## Implementation
+
+This API implementation uses Spring Boot and requires Java JDK 11 and Maven.
+
+You can build the API using the command line in the project root directory:
+  
+```
+mvn package
+```
+
+The API application may be run using the Spring Boot Maven plugin:
+
+```
+mvn spring-boot:run
+```
+
+This project uses an embedded Tomcat server to host the application
+that will be available at [http://localhost:8080](http://localhost:8080)  
+
+Access the API using the `companies` end point:
+
+```
+http://localhost:8080/v1/companies/1
+```
+
+
 ## Sequence
 
-1. Read these instrucitons carefully.
+1. Read these instructions carefully.
 2. Develop a simple API (see [Evaluation Details](#-Evaluation-details))
 3. Publish your code to a source repository that we can access
 4. Provide us with a link to this code at least a day before you come to see us
