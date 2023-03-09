@@ -21,17 +21,8 @@ import org.springframework.test.web.servlet.MockMvc;
  * only the web layer rather than the whole context.
  */
 @WebMvcTest(CompaniesApiController.class)
-public class CompaniesApiControllerTest {
+public class CompaniesApiControllerTest extends TestBase {
 
-	/** The id of the awesome company held in the remote system. */
-	private static final int AWESOME_COMPANY_ID = 1;
-
-	/** The id of the not so awesome company held in the remote system. */
-	private static final int NOT_SO_ASWSOME_COMPANY_ID = 2;
-
-	/** An id of a company not held in the remote system */
-	private static final int NO_RESOURCE_FOR_COMPANY_ID = 3;
-	
 	@Autowired
 	private MockMvc mockMvc;
 
