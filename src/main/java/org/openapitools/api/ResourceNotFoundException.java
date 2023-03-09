@@ -9,7 +9,7 @@ public class ResourceNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = 8479401851848242708L;
 
 	/**
-	 * Constructor.
+	 * Constructs a new exception with a detail message.
 	 * 
 	 * @param message the detail message. The detail message is saved for later
 	 *                retrieval.

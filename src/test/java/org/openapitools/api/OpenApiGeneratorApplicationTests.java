@@ -11,7 +11,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 
 
 /**
- * Some {@code TaskController} tests that set HTTP request and assert the response.
+ * These tests start and operate on a running system, suitable for integration testing.
  */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class OpenApiGeneratorApplicationTests extends TestBase {

@@ -1,5 +1,6 @@
 package org.openapitools.api;
 
+import org.openapitools.model.Error;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,7 +21,7 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 	@ExceptionHandler(value = { ResourceNotFoundException.class })
 	protected ResponseEntity<Object> handleNotFoundException(RuntimeException ex) {
 		
-		org.openapitools.model.Error error = new org.openapitools.model.Error().error("not found").errorDescription(ex.getMessage());
+		Error error = new Error().error("not found").errorDescription(ex.getMessage());
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
 }
