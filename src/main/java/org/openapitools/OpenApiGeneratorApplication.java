@@ -9,6 +9,10 @@ import org.springframework.context.annotation.FullyQualifiedAnnotationBeanNameGe
 
 import com.fasterxml.jackson.databind.Module;
 
+
+/**
+ * API entry point responsible for bootstrapping this Spring Boot application.
+ */
 @SpringBootApplication(
     nameGenerator = FullyQualifiedAnnotationBeanNameGenerator.class
 )

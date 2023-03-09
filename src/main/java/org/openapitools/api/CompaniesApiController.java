@@ -20,6 +20,10 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
+/**
+ * Controller that conforms to the {@code openapi-companies} spec that is
+ * responsible for handling requests to the {@code Companies} API.
+ */
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-08T15:37:35.034+13:00[Pacific/Auckland]")
 @Controller
 @RequestMapping("${openapi.mWNZCompanies.base-path:/v1}")
@@ -27,13 +31,17 @@ public class CompaniesApiController {
 
 	private final CompaniesRepository companiesRepository;
 
+	/** 
+	 * Constructor.
+	 * @param companiesRepository the repository instance injected by the Spring Framework
+	 */
 	@Autowired
 	public CompaniesApiController(CompaniesRepository companiesRepository) {
 		this.companiesRepository = companiesRepository;
 	}
 
 	/**
-	 * GET /companies/{id}
+	 * Method responsible for handling get requests to /companies/{id}.
 	 *
 	 * @param id Company ID (required)
 	 * @return OK (status code 200) or Not Found (status code 404)
