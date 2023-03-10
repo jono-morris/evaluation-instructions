@@ -23,7 +23,7 @@ public class RemoteCompaniesRepository implements CompaniesRepository {
 
 	static {
 		try {
-			jaxbContext = JAXBContext.newInstance(Data.class);
+			jaxbContext = JAXBContext.newInstance(CompanyData.class);
 		} catch (JAXBException e) {
 			throw new IllegalStateException(e);
 		}
@@ -34,15 +34,16 @@ public class RemoteCompaniesRepository implements CompaniesRepository {
 	 */
 	public Company findById(Integer id) {
 
-		Data data = null;
+		CompanyData companyData = null;
 		try {
 			URL url = new URL(String.format(XML_API, id));
 			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			data = (Data) unmarshaller.unmarshal(url);
+			companyData = (CompanyData) unmarshaller.unmarshal(url);
 		} catch (Exception e) {
 			throw new ResourceNotFoundException("Could not access resource for id " + id);
 		}
 
-		return new Company().name(data.getName()).description(data.getDescription()).id(Integer.parseInt(data.getId()));
+		return new Company().name(companyData.getName()).description(companyData.getDescription())
+				.id(Integer.parseInt(companyData.getId()));
 	}
 }

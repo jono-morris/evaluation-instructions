@@ -33,10 +33,16 @@ public class CompaniesApiControllerTest extends TestBase {
 	@MockBean
 	private RemoteCompaniesRepository companies;
 
+	/**
+	 * An 'awesome' {@code Company} instance for testing purposes. 
+	 */
 	private Company awesomeCompany() {
 		return new Company().id(AWESOME_COMPANY_ID).name("MWNZ").description("..is awesome");
 	};
 
+	/**
+	 * A 'not so awesome' {@code Company} instance for testing purposes.
+	 */
 	private Company notSoAwesomeCompany() {
 		return new Company().id(NOT_SO_ASWSOME_COMPANY_ID).name("Other").description("....is not");
 	};
@@ -48,10 +54,7 @@ public class CompaniesApiControllerTest extends TestBase {
 		given(this.companies.findById(3)).willThrow(new ResourceNotFoundException("Could not access resource for id 3"));
 	}
 
-	/**
-	 * Verify that an 'awesome company' HTTP get request is successful and returns
-	 * the expected response and HTTP 200.
-	 */
+	/** Verify that a get request for an 'awesome' company is successful and returns HTTP 200. */
 	@Test
 	void testAwesomeCompany() throws Exception {
 		mockMvc.perform(get("/v1/companies/" + AWESOME_COMPANY_ID)).andExpect(status().is2xxSuccessful())
@@ -60,10 +63,7 @@ public class CompaniesApiControllerTest extends TestBase {
 				.andExpect(jsonPath("$.description").value("..is awesome"));
 	}
 
-	/**
-	 * Verify that a 'not so awesome company' HTTP get request is successful and
-	 * returns the expected response and HTTP 200.
-	 */
+	/** Verify that a get request for a 'not so awesome' company is successful and returns HTTP 200. */
 	@Test
 	void testNotSoAwesomeCompany() throws Exception {
 		mockMvc.perform(get("/v1/companies/" + NOT_SO_ASWSOME_COMPANY_ID)).andExpect(status().is2xxSuccessful())
@@ -72,10 +72,7 @@ public class CompaniesApiControllerTest extends TestBase {
 				.andExpect(jsonPath("$.name").value("Other")).andExpect(jsonPath("$.description").value("....is not"));
 	}
 
-	/**
-	 * Verify that a HTTP get request for a company that does not exist in the
-	 * remote system returns a HTTP 4XX
-	 */
+	/** Verify that a get request for a company that does not exist returns a HTTP 4XX */
 	@Test
 	void testPhantomCompany() throws Exception {
 		mockMvc.perform(get("/v1/companies/" + NO_RESOURCE_FOR_COMPANY_ID)).andExpect(status().is4xxClientError())

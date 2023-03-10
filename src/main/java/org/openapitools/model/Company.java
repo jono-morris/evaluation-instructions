@@ -9,9 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * Company
+ * Company domain object
  */
-
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-08T15:37:35.034+13:00[Pacific/Auckland]")
 public class Company {
 
@@ -32,8 +31,7 @@ public class Company {
   /**
    * Get id
    * @return id
-  */
-  
+   */
   @Schema(name = "id", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public Integer getId() {
     return id;
@@ -51,8 +49,7 @@ public class Company {
   /**
    * Get name
    * @return name
-  */
-  
+   */
   @Schema(name = "name", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getName() {
     return name;
@@ -70,8 +67,7 @@ public class Company {
   /**
    * Get description
    * @return description
-  */
-  
+   */
   @Schema(name = "description", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getDescription() {
     return description;
@@ -122,4 +118,3 @@ public class Company {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

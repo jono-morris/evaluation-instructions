@@ -4,10 +4,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * The data for a single resource retrieved from the repository.
+ * The data for a single {@code Company} retrieved from the remote system.
  */
 @XmlRootElement(name = "Data")
-class Data {
+class CompanyData {
 
 	private String id;
 	private String name;

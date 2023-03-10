@@ -3,7 +3,7 @@ package org.openapitools.repository;
 import org.openapitools.model.Company;
 
 /**
- * A Repository of {@code Company} details.
+ * A Repository for accessing {@code Company} details.
  */
 public interface CompaniesRepository {
 

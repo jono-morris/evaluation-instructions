@@ -1,7 +1,7 @@
 package org.openapitools.api;
 
 /**
- * Exception thrown when a requested resource cannot be found.
+ * Exception thrown when a requested resource cannot be found in a system.
  */
 public class ResourceNotFoundException extends RuntimeException {
 

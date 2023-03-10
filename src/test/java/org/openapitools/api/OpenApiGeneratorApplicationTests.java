@@ -24,14 +24,14 @@ class OpenApiGeneratorApplicationTests extends TestBase {
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-	/** Verify the JSON response when making an 'awesome' company request. */
+	/** Verify the response for a 'awesome' company get request. */
 	@Test
 	public void awesomeCompanyResponse() throws Exception {
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/v1/companies/" + AWESOME_COMPANY_ID,
 				String.class)).isEqualTo("{\"id\":1,\"name\":\"MWNZ\",\"description\":\"..is awesome\"}");
 	}
 
-	/** Verify the JSON response when making a request for the 'not so awesome' company. */
+	/** Verify the response for a 'not so awesome' company get request. */
 	@Test
 	public void lessAwesomeCompanyResponse() throws Exception {
 		assertThat(this.restTemplate
@@ -39,7 +39,7 @@ class OpenApiGeneratorApplicationTests extends TestBase {
 				.isEqualTo("{\"id\":2,\"name\":\"Other\",\"description\":\"....is not\"}");
 	}
 	
-	/** Verify the JSON response when making a request for a company that has no entry in the remote system. */
+	/** Verify the response for a company not held in the remote system. */
 	@Test
 	public void errorResponse() throws Exception {
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/v1/companies/" + NO_RESOURCE_FOR_COMPANY_ID, String.class))

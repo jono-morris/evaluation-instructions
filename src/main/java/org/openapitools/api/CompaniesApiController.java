@@ -41,9 +41,9 @@ public class CompaniesApiController {
 	}
 
 	/**
-	 * Method responsible for handling get requests to /companies/{id}.
+	 * Method responsible for handling get requests to /v1/companies/{id}.
 	 *
-	 * @param id Company ID (required)
+	 * @param id the id of the Company to get; required
 	 * @return OK (status code 200) or Not Found (status code 404)
 	 */
 	@Operation(operationId = "companiesIdGet", tags = { "Companies" }, responses = {

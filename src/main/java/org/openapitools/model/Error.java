@@ -9,9 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * Error
+ * Error domain object.
  */
-
 @Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-08T15:37:35.034+13:00[Pacific/Auckland]")
 public class Error {
 
@@ -29,8 +28,7 @@ public class Error {
   /**
    * Get error
    * @return error
-  */
-  
+   */
   @Schema(name = "error", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getError() {
     return error;
@@ -48,8 +46,7 @@ public class Error {
   /**
    * Get errorDescription
    * @return errorDescription
-  */
-  
+   */
   @Schema(name = "error_description", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
   public String getErrorDescription() {
     return errorDescription;
@@ -98,4 +95,3 @@ public class Error {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
