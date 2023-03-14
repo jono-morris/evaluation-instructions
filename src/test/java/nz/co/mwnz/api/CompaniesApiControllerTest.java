@@ -1,4 +1,4 @@
-package org.openapitools.api;
+package nz.co.mwnz.api;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -8,13 +8,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openapitools.model.Company;
 import org.openapitools.repository.RemoteCompaniesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+
+import nz.co.mwnz.model.Company;
 
 /**
  * Unit tests for {@link CompaniesApiController} where Spring Boot instantiates
