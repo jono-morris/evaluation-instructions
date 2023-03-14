@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import nz.co.mwnz.model.Company;
-import nz.co.mwnz.service.CompaniesService;
+import nz.co.mwnz.repository.CompaniesRepository;
 
 /**
  * Controller that is responsible for handling requests to the {@code Companies}
@@ -21,16 +21,16 @@ import nz.co.mwnz.service.CompaniesService;
 @RequestMapping("/v1")
 public class CompaniesApiController {
 
-	private final CompaniesService companiesService;
+	private final CompaniesRepository companiesRepository;
 
 	/**
 	 * Constructor.
 	 * 
-	 * @param companiesService the service instance injected by the Spring Framework
+	 * @param companiesRepository the service instance injected by the Spring Framework
 	 */
 	@Autowired
-	public CompaniesApiController(CompaniesService companiesService) {
-		this.companiesService = companiesService;
+	public CompaniesApiController(CompaniesRepository companiesRepository) {
+		this.companiesRepository = companiesRepository;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class CompaniesApiController {
 	public ResponseEntity<Company> companiesIdGet(
 			@Parameter(name = "id", description = "Company ID", required = true, in = ParameterIn.PATH) @PathVariable("id") Integer id) {
 
-		Company company = companiesService.findById(id);
+		Company company = companiesRepository.findById(id);
 		if (null == company) {
 			throw new ResourceNotFoundException("Could not access resource for id " + id);
 		}

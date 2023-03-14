@@ -1,4 +1,4 @@
-package nz.co.mwnz.service;
+package nz.co.mwnz.repository;
 
 import java.io.StringReader;
 import java.net.URI;
@@ -12,7 +12,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import nz.co.mwnz.api.ResourceNotFoundException;
 import nz.co.mwnz.model.Company;
@@ -20,8 +20,8 @@ import nz.co.mwnz.model.Company;
 /**
  * A service that retrieves company details from XML files held in github.
  */
-@Service
-public class CompanyServiceImpl implements CompaniesService {
+@Repository
+public class CompanyRepositoryImpl implements CompaniesRepository {
 
 	/** Template for company resources held on the remote system. */
 

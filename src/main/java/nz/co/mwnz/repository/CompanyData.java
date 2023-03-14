@@ -1,4 +1,4 @@
-package nz.co.mwnz.service;
+package nz.co.mwnz.repository;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

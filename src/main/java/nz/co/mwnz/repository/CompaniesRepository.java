@@ -1,11 +1,11 @@
-package nz.co.mwnz.service;
+package nz.co.mwnz.repository;
 
 import nz.co.mwnz.model.Company;
 
 /**
  * A Service for accessing {@code Company} details.
  */
-public interface CompaniesService {
+public interface CompaniesRepository {
 
 	/**
 	 * Finds a company in the repository using the provided id.
