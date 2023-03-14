@@ -3,7 +3,7 @@ package nz.co.mwnz.repository;
 import nz.co.mwnz.model.Company;
 
 /**
- * A Service for accessing {@code Company} details.
+ * A repository for accessing {@code Company} details.
  */
 public interface CompaniesRepository {
 

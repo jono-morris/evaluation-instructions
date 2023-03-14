@@ -26,7 +26,7 @@ public class CompaniesApiController {
 	/**
 	 * Constructor.
 	 * 
-	 * @param companiesRepository the service instance injected by the Spring Framework
+	 * @param companiesRepository the repository instance injected by the Spring Framework
 	 */
 	@Autowired
 	public CompaniesApiController(CompaniesRepository companiesRepository) {

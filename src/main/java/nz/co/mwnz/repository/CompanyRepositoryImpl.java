@@ -18,7 +18,7 @@ import nz.co.mwnz.api.ResourceNotFoundException;
 import nz.co.mwnz.model.Company;
 
 /**
- * A service that retrieves company details from XML files held in github.
+ * A repository that retrieves company details from XML files held in github.
  */
 @Repository
 public class CompanyRepositoryImpl implements CompaniesRepository {
