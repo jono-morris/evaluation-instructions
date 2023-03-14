@@ -1,4 +1,4 @@
-package org.openapitools.repository;
+package nz.co.mwnz.service;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * The data for a single {@code Company} retrieved from the remote system.
  */
 @XmlRootElement(name = "Data")
-class CompanyData {
+public class CompanyData {
 
 	private String id;
 	private String name;

@@ -1,4 +1,4 @@
-package org.openapitools.api;
+package nz.co.mwnz.api;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

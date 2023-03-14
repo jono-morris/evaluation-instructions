@@ -1,4 +1,4 @@
-package org.openapitools.model;
+package nz.co.mwnz.model;
 
 import java.util.Objects;
 

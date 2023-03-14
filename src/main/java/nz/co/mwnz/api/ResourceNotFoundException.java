@@ -1,4 +1,4 @@
-package org.openapitools.api;
+package nz.co.mwnz.api;
 
 /**
  * Exception thrown when a requested resource cannot be found in a system.

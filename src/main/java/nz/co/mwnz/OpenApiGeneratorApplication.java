@@ -1,4 +1,4 @@
-package org.openapitools;
+package nz.co.mwnz;
 
 import org.openapitools.jackson.nullable.JsonNullableModule;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.Module;
     nameGenerator = FullyQualifiedAnnotationBeanNameGenerator.class
 )
 @ComponentScan(
-    basePackages = {"org.openapitools", "org.openapitools.api" , "org.openapitools.configuration"},
+    basePackages = {"nz.co.mwnz", "nz.co.mwnz.api", "nz.co.mwnz.model", "nz.co.mwnz.service"},
     nameGenerator = FullyQualifiedAnnotationBeanNameGenerator.class
 )
 public class OpenApiGeneratorApplication {

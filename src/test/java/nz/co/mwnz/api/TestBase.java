@@ -1,4 +1,4 @@
-package org.openapitools.api;
+package nz.co.mwnz.api;
 
 /**
  * Common base class for API Controller tests.
