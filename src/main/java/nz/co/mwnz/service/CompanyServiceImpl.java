@@ -48,11 +48,12 @@ public class CompanyServiceImpl implements CompaniesService {
 	
 		try {
 			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+			
 			if (response.statusCode() == HttpStatus.OK.value()) {
 	
-				StringReader sr = new StringReader(response.body());
+				StringReader reader = new StringReader(response.body());
 				Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-				CompanyData companyData = (CompanyData) unmarshaller.unmarshal(sr);
+				CompanyData companyData = (CompanyData) unmarshaller.unmarshal(reader);
 
 				return new Company().name(companyData.getName()).description(companyData.getDescription())
 						.id(Integer.parseInt(companyData.getId()));

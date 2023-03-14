@@ -14,17 +14,18 @@ import nz.co.mwnz.model.Company;
 import nz.co.mwnz.service.CompaniesService;
 
 /**
- * Controller that conforms to the {@code openapi-companies} spec that is
- * responsible for handling requests to the {@code Companies} API.
+ * Controller that is responsible for handling requests to the {@code Companies}
+ * API.
  */
 @Controller
-@RequestMapping("${openapi.mWNZCompanies.base-path:/v1}")
+@RequestMapping("/v1")
 public class CompaniesApiController {
 
 	private final CompaniesService companiesService;
 
-	/** 
+	/**
 	 * Constructor.
+	 * 
 	 * @param companiesService the service instance injected by the Spring Framework
 	 */
 	@Autowired
@@ -37,7 +38,8 @@ public class CompaniesApiController {
 	 *
 	 * @param id the id of the Company to get; required
 	 * @return OK (status code 200) or Not Found (status code 404)
-	 * @throws ResourceNotFoundException if the requested resource could not be retrieved
+	 * @throws ResourceNotFoundException if the requested resource could not be
+	 *                                   retrieved
 	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/companies/{id}", produces = { "application/json" })
 	public ResponseEntity<Company> companiesIdGet(

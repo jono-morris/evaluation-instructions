@@ -2,8 +2,6 @@ package nz.co.mwnz.model;
 
 import java.util.Objects;
 
-import javax.annotation.Generated;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -11,7 +9,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 /**
  * Error domain object.
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-08T15:37:35.034+13:00[Pacific/Auckland]")
 public class Error {
 
   @JsonProperty("error")
