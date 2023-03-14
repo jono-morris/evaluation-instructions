@@ -8,7 +8,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openapitools.repository.RemoteCompaniesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -16,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import nz.co.mwnz.model.Company;
+import nz.co.mwnz.service.CompaniesService;
 
 /**
  * Unit tests for {@link CompaniesApiController} where Spring Boot instantiates
@@ -32,7 +32,7 @@ public class CompaniesApiControllerTest extends TestBase {
 	 * {@code CompaniesApiController} will use.
 	 */
 	@MockBean
-	private RemoteCompaniesRepository companies;
+	private CompaniesService companies;
 
 	/**
 	 * An 'awesome' {@code Company} instance for testing purposes. 
